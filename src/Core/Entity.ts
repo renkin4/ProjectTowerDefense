@@ -10,9 +10,11 @@ abstract class Entity implements IGameObject{
         this.position = new Vector3();
         this.rotation = new Vector3();
         this.scale = new Vector3();
+        
         this.RegisterToScene();
     }
 
+    Dispose(): void {}
     OnRegistered(): void {}
     BeforeRender(delta: number): void {}
     AfterRender(delta: number): void {}

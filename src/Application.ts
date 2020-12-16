@@ -7,7 +7,7 @@ export class Application {
     
     constructor(canvas : HTMLCanvasElement){
         this.m_Engine = new Engine(canvas);
-        this.m_Scene = new GameScene(this.m_Engine);
+        this.m_Scene = new GameScene(this.m_Engine, canvas);
 
         this.UpdateTicks();
     }
