@@ -32,6 +32,7 @@ class GameScene extends Scene {
     constructor(engine: Engine, canvas : HTMLCanvasElement, options?: SceneOptions) {
         super(engine, options);
         
+        this.m_GameObjects = [];
         this.m_Canvas = canvas;
 
         if (GameScene.s_Instance == null) {
@@ -40,10 +41,9 @@ class GameScene extends Scene {
             throw new Error("Erm Please don't instantiate this class anymore");
         }
 
-        this.m_Level = new Level();
-
-        this.m_GameObjects = [];
         this.Init();
+
+        this.m_Level = new Level();
     }
 
     private Init(): void {
