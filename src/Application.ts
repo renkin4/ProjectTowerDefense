@@ -1,4 +1,4 @@
-import { Engine, Scene, FreeCamera, Vector3, HemisphericLight, Mesh } from "@babylonjs/core";
+import { Engine, Scene } from "@babylonjs/core";
 
 export class Application {
     private m_Engine : Engine;
