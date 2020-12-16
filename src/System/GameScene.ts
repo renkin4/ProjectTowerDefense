@@ -17,9 +17,18 @@ interface IGameObject {
  */
 class GameScene extends Scene {
     private m_GameObjects: IGameObject[];
+    private static s_Instance: GameScene;
+
+    public static get instance() { return GameScene.s_Instance; }
 
     constructor(engine: Engine, options?: SceneOptions) {
         super(engine, options);
+
+        if (GameScene.s_Instance == null) {
+            GameScene.s_Instance = this;
+        } else {
+            throw new Error("Erm Please don't instantiate this class anymore");
+        }
 
         this.m_GameObjects = [];
         this.Init();

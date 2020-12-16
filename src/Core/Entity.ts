@@ -1,5 +1,5 @@
 import { Vector3 } from "@babylonjs/core";
-import { IGameObject } from "../System/GameScene";
+import { GameScene, IGameObject } from "../System/GameScene";
 
 abstract class Entity implements IGameObject{
     public position: Vector3;
@@ -10,12 +10,17 @@ abstract class Entity implements IGameObject{
         this.position = new Vector3();
         this.rotation = new Vector3();
         this.scale = new Vector3();
+        this.RegisterToScene();
     }
-    
+
     OnRegistered(): void {}
     BeforeRender(delta: number): void {}
     AfterRender(delta: number): void {}
     Update(delta: number): void {}
+
+    RegisterToScene() :void {
+        GameScene.instance.RegisterGameObject(this);
+    }
 }
 
 export { Entity , IGameObject }
